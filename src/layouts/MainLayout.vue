@@ -2,7 +2,7 @@
   <q-layout class="shayne-layout" view="lHh Lpr lFf">
     <q-header class="remove-fixed" reveal elevated>
       <q-toolbar>
-        <q-toolbar-title> Shayne's Space </q-toolbar-title>
+        <q-toolbar-title> shayne-quinton.com </q-toolbar-title>
       </q-toolbar>
       <q-tabs align="left">
         <q-route-tab to="/" label="Home" />
@@ -11,7 +11,13 @@
       </q-tabs>
     </q-header>
 
-    <q-page-container>
+    <q-page-container
+      style="
+        padding-top: 50px !important;
+        padding-left: 10px;
+        padding-right: 10px;
+      "
+    >
       <router-view style="min-height: 0 !important" />
     </q-page-container>
   </q-layout>

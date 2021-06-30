@@ -1,22 +1,22 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+    <page-title title="Welcome to shayne-quinton.com!" />
+    <div>
+      I am a passionate software developer during the day, aspiring game
+      developer during the night. I have a lifelong commitment to learning all
+      that I can about software development. TODO - more stuff.
+    </div>
   </q-page>
 </template>
 
 <script lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/CompositionComponent.vue';
-import { defineComponent, ref } from 'vue';
+import { defineComponent } from 'vue';
+import PageTitle from 'components/PageTitle.vue';
 
 export default defineComponent({
   name: 'PageIndex',
-  components: { ExampleComponent },
+  components: { PageTitle },
+  /*
   setup() {
     const todos = ref<Todo[]>([
       {
@@ -45,5 +45,6 @@ export default defineComponent({
     });
     return { todos, meta };
   }
+  */
 });
 </script>
