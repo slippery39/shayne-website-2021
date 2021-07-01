@@ -84,6 +84,10 @@ module.exports = configure(function (ctx) {
       open: true // opens browser window automatically
     },
 
+    extras:[
+      "fontawesome-v5"
+    ],
+
     // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
       config: {
@@ -98,7 +102,8 @@ module.exports = configure(function (ctx) {
           negative: '#C10015',
           info: '#31CCEC',
           warning: '#F2C037'
-        }
+        },
+          iconSet: 'fontawesome-v5'
       },
 
       // iconSet: 'material-icons', // Quasar icon set
