@@ -40,11 +40,11 @@ const testProjects: ProjectInfo[] = [
     image: 'https://via.placeholder.com/150',
   },
   {
-    title: 'Project 3',
+    title: 'Vector Drawing App',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut elementum risus. Cras faucibus lacus vel aliquet venenatis. Aenean nec aliquam dui, non sollicitudin dui. Nulla eget diam sed velit.',
-    url: 'project2.html',
-    image: 'https://via.placeholder.com/150',
+      'A vector based drawing app that was built to test out the Quasar framework for VueJS',
+    url: 'vector-drawing-app/index.html',
+    image: 'vector-drawing-app/screenshot.jpg',
   },
 ];
 
