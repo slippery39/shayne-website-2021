@@ -24,20 +24,14 @@ import { ProjectInfo } from 'src/data/data';
 import ProjectInfoCard from 'src/components/ProjectInfoCard.vue';
 import PageTitle from 'src/components/PageTitle.vue';
 
+//placeholder image can be found with https://via.placeholder.com/150;
 const testProjects: ProjectInfo[] = [
   {
-    title: 'Project 1',
+    title: 'Pokemon Battle Simulator',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut elementum risus. Cras faucibus lacus vel aliquet venenatis. Aenean nec aliquam dui, non sollicitudin dui. Nulla eget diam sed velit.',
-    url: 'project1.html',
-    image: 'https://via.placeholder.com/150',
-  },
-  {
-    title: 'Project 2',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut elementum risus. Cras faucibus lacus vel aliquet venenatis. Aenean nec aliquam dui, non sollicitudin dui. Nulla eget diam sed velit.',
-    url: 'project2.html',
-    image: 'https://via.placeholder.com/150',
+      'A pokemon battle game where you can play against a computer opponent or play online vs another player. Front End built with React and Typescript, Server built with NodeJS and hosted on Heroku',
+    url: 'http://pokemon-sim.shayne-quinton.com',
+    image: 'project-screenshots/pokemon.jpg',
   },
   {
     title: 'Vector Drawing App',
