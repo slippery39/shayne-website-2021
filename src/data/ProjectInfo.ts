@@ -4,4 +4,6 @@ export interface ProjectInfo {
     description: string;
     url: string;
     github?: string;
+    startDate:Date,
+    endDate:Date
   }

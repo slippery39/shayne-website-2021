@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { ProjectInfo } from 'src/data/data';
+import { ProjectInfo } from 'src/data/ProjectInfo';
 import ProjectInfoCard from 'src/components/ProjectInfoCard.vue';
 import PageTitle from 'src/components/PageTitle.vue';
 
@@ -32,6 +32,8 @@ const testProjects: ProjectInfo[] = [
       'A pokemon battle game where you can play against a computer opponent or play online vs another player. Front End built with React and Typescript, Server built with NodeJS and hosted on Heroku',
     url: 'http://pokemon-sim.shayne-quinton.com',
     image: 'project-screenshots/pokemon.jpg',
+    startDate: new Date(2020, 8, 1),
+    endDate: new Date(2021, 5, 1),
   },
   {
     title: 'Vector Drawing App',
@@ -39,6 +41,8 @@ const testProjects: ProjectInfo[] = [
       'A vector based drawing app that was built to test out the Quasar framework for VueJS',
     url: 'vector-drawing-app/index.html',
     image: 'vector-drawing-app/screenshot.jpg',
+    startDate: new Date(2020, 3, 1),
+    endDate: new Date(2020, 4, 1),
   },
 ];
 

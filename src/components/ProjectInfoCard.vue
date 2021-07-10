@@ -9,22 +9,52 @@
       <div><a :href="info.url">Click here to view online</a></div>
     </q-card-section>
     <q-card-section>
+      <div>
+        Start Date :
+        {{
+          info.startDate.toLocaleString('default', {
+            month: 'long',
+            year: 'numeric',
+          })
+        }}
+      </div>
+      <div>
+        End Date :
+        {{
+          info.endDate.toLocaleString('default', {
+            month: 'long',
+            year: 'numeric',
+          })
+        }}
+      </div>
+    </q-card-section>
+    <q-card-section>
       <div>{{ info.description }}</div>
     </q-card-section>
+    <q-card-section><Test /></q-card-section>
   </q-card>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { ProjectInfo } from 'src/data/data';
+import { ProjectInfo } from 'src/data/ProjectInfo';
+import Test from 'components/testMarkdown.md';
 
 export default defineComponent({
   name: 'ProjectInfoCard',
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  components: { Test },
   props: {
     info: {
       type: Object as PropType<ProjectInfo>,
       required: true,
     },
+  },
+  setup: (props) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    console.log(props.info.startDate);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    console.log(props.info.endDate);
   },
 });
 </script>
