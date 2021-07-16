@@ -32,6 +32,9 @@
       <div>{{ info.description }}</div>
     </q-card-section>
     <q-card-section><Test /></q-card-section>
+    <q-card-section>
+      <pre><code class="language-typescript">let s=2;let y="bananas";</code></pre>
+    </q-card-section>
   </q-card>
 </template>
 
