@@ -8,7 +8,6 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';
 import typescript from 'highlight.js/lib/languages/typescript';
 hljs.registerLanguage('typescript', typescript);
-hljs.initHighlightingOnLoad();
 
 setInterval(() => {
   var blocks = document.querySelectorAll('pre code:not(.hljs)');

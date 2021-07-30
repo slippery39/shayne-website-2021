@@ -32,16 +32,13 @@
       <div>{{ info.description }}</div>
     </q-card-section>
     <q-card-section><Test /></q-card-section>
-    <q-card-section>
-      <pre><code class="language-typescript">let s=2;let y="bananas";</code></pre>
-    </q-card-section>
   </q-card>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import { ProjectInfo } from 'src/data/ProjectInfo';
-import Test from 'components/testMarkdown.md';
+import Test from 'components/postmortempokemon.md';
 
 export default defineComponent({
   name: 'ProjectInfoCard',
