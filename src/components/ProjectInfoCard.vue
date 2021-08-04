@@ -31,19 +31,26 @@
     <q-card-section>
       <div>{{ info.description }}</div>
     </q-card-section>
-    <q-card-section><Test /></q-card-section>
+    <q-card-section>
+      <div v-if="info.articles !== undefined">
+        <router-link
+          v-for="article in info.articles"
+          :key="article.id"
+          :to="`/articles/${article.id}`"
+          >{{ article.title }}</router-link
+        >
+      </div>
+    </q-card-section>
   </q-card>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import { ProjectInfo } from 'src/data/ProjectInfo';
-import Test from 'components/postmortempokemon.md';
 
 export default defineComponent({
   name: 'ProjectInfoCard',
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  components: { Test },
   props: {
     info: {
       type: Object as PropType<ProjectInfo>,

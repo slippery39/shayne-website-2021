@@ -23,6 +23,8 @@ import { defineComponent } from 'vue';
 import { ProjectInfo } from 'src/data/ProjectInfo';
 import ProjectInfoCard from 'src/components/ProjectInfoCard.vue';
 import PageTitle from 'src/components/PageTitle.vue';
+import { getArticles } from 'src/data/Articles';
+import ArticleInfo from 'src/data/ArticleInfo';
 
 //placeholder image can be found with https://via.placeholder.com/150;
 const testProjects: ProjectInfo[] = [
@@ -34,6 +36,9 @@ const testProjects: ProjectInfo[] = [
     image: 'project-screenshots/pokemon.jpg',
     startDate: new Date(2020, 8, 1),
     endDate: new Date(2021, 5, 1),
+    articles: getArticles().filter((info: ArticleInfo) =>
+      info.tags.includes('pokemon battle simulator')
+    ),
   },
   {
     title: 'Vector Drawing App',
@@ -43,6 +48,9 @@ const testProjects: ProjectInfo[] = [
     image: 'vector-drawing-app/screenshot.jpg',
     startDate: new Date(2020, 3, 1),
     endDate: new Date(2020, 4, 1),
+    articles: getArticles().filter((info: ArticleInfo) =>
+      info.tags.includes('vector drawing app')
+    ),
   },
 ];
 
