@@ -1,3 +1,7 @@
+Since the time I started learning how to program I had always wanted to make a Pokemon game. I remember playing countless hours of the original pokemon and its sequels
+throughout my childhood. The game has a lot of complex systems that need to interact with each other which makes for an interesting project. Given that I am a bit older now and gained a bit more programming skills,
+I thought it would be a good time to attempt to create a clone of the Pokemon game's battle system.
+
 **Goal of the Project**
 
 The goals of this project were as follows.
@@ -13,16 +17,8 @@ The goals of this project were as follows.
 
 - Create an online server for players to play over the internet
 
-This is not my first attempt at creating a Pokemon Battle game. When I
-was 16 I attempted to create one using a software called Game Maker, but
-eventually stopped working on it as it became too complex for me to
-handle at the time. So I was hoping that in the 14 years that had passed
-between now and then that I had gained enough skills to be able to
-complete this project.
-
 This article will be easier to read if you already have some knowledge
-of how Pokemon works. Since it's a very complex game, I will not be
-going over that in this document.
+of how Pokemon works. Since its a complex game I may not go over certain parts of it in this article.
 
 **Project Management**
 
@@ -47,7 +43,7 @@ started with and checked off in a work session.
 Those gimme tasks actually ended up being very important to maintaining
 my discipline in completing this project. A lot of times I would log
 onto my computer with the intention of just completing one of those
-small tasks so I didn't feel bad about not making progress. Doing that
+small tasks so I could feel like a made a bit of progress for the day. Doing that
 one small task would easily end up turning into 2-3 hours of working as
 the momentum of completing one thing led me wanting to do more.
 
@@ -63,8 +59,8 @@ Sometimes people view software similar to construction, where its
 architecture needs to be **_planned_** in detail. After that we
 **_build_** the software and once its built we **_maintain_** the
 software by fixing cracks and painting its metaphorical walls once in a
-while. Even if project management techniques like "Agile" have tried to
-make this a more iterative process, it still feel like for the most part
+while. Even if project management techniques like Agile have tried to
+make this a more iterative process, it still feels like for the most part
 we view software as a bunch of mini construction projects that are
 planned, built and maintained.
 
@@ -74,7 +70,7 @@ this case the environment is the features that your users need and
 evolving means aggressively refactoring your codebase to make things
 easier for everyone involved. You do not make big architectural
 decisions up front. Bur rather you defer architectural decisions until
-you are 100% sure it will add value to your codebase. This is because
+you are 100% sure it will add value to your project. This is because
 the more complex architecture you implement in a project the harder it
 becomes to change.
 
@@ -93,8 +89,8 @@ The basic development loop for organic programming is as follows
 
 This way, instead of treating refactoring as a separate task that is
 more likely to get kicked down the road, you treat it as part of
-implementing the feature. This has the effect of having a higher chance
-of your codebase evolving based on the features you work on.
+implementing the feature. This has the effect of your codebase naturally
+evolving based on the features you work on.
 
 While using this mindset, I actually found it to work really well. For
 the most part, the code base was kept in relatively good shape for the
@@ -921,20 +917,17 @@ actually designed from the start, but was refactored into over time
 based on ease of implementing certain features. It is not perfect and
 has some flaws and inconsistencies with the implementation, but I feel
 like this architecture could be a good start for many other turn-based
-games I want to make in the future. There are some things I would do
-differently from the start. For example, if I could somehow be able to
-express a BattleBehaviour in pure data that could increase the
-flexibility of my architecture by allowing me to easily modify or create
-them at runtime or save them to a database or file. When I work on
-another turn based game project, I will look into figuring out how to do
-this.
+games I want to make in the future.
+
+One thing I would do different was try to find a way to express the battle behaviours in a more modular way. Currently they are classes that we need to instantiate, which makes it
+impossible to modify them at runtime like we can with the Techniques or Pokemon. If I could create them in a modular way and modify them at runtime it would open up a lot more ways that
+I could program in certain abilities.
 
 **Artificial Intelligence**
 
 Artificial Intelligence is sort of a buzzword these days, so when I say
-Artificial Intelligence, I actually just mean general programming
-instructions. There were no neural networks or machine learning
-techniques used.
+Artificial Intelligence, i'm not talking about neural networks or machine learning.
+In this project the AI is just based off of an algorithm.
 
 I wanted to add a bunch of Pokemon, Techniques and Abilities to the game
 so I researched a way that could write an A.I. without needing to
@@ -1046,3 +1039,7 @@ to catch without a mass amount of people testing the game.
 
 - Try to keep objects as pure data when possible, as it can make a
   system very flexible.
+
+- React Hooks could be fine to use for user interfaces in games, but we might want to use an actual game engine if we plan on making a full game.
+
+-I wish I had kept track of my total hours worked

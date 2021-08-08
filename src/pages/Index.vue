@@ -4,7 +4,7 @@
     <div>
       <p>
         I am a Canadian software developer who is very passionate about learning
-        and improving in this field every single day.
+        and improving every single day.
       </p>
       <p>
         After work and on weekends I am an aspiring game developer, basketball
@@ -12,11 +12,12 @@
       </p>
       <p>
         I travelled to Mexico right before the COVID-19 pandemic happened and
-        ended up staying there for almost a whole year. Because of the pandemic
-        I ended up having a lot more time than usual and I decided that I would
-        always have a software or game development project to work on. This
-        website was created so I can keep a diary of these projects and one day
-        look back and see how much improvement I have made over the years.
+        ended up staying there for almost a year. Because of the pandemic I
+        ended up having a lot more time than usual and I decided that I would
+        start to work on more personal projects regarding software, web and game
+        development. This website was created mainly so I can keep a diary of
+        these projects and maybe one day look back and see how much progress I
+        have made as a developer.
       </p>
     </div>
   </q-page>

@@ -2,9 +2,7 @@
   <q-page>
     <page-title title="Projects" />
     <div style="padding-bottom: 24px">
-      This is a collection of projects that I have created in my spare time. For
-      each project I work on, I try to learn something new and try out different
-      things that I might not get a chance to do during my work day.
+      These are my own personal projects I have worked on in my spare time.
     </div>
     <div>
       <project-info-card

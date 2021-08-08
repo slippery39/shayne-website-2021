@@ -10,16 +10,14 @@
     </q-card-section>
     <q-card-section>
       <div>
-        Start Date :
+        Development Period:
         {{
           info.startDate.toLocaleString('default', {
             month: 'long',
             year: 'numeric',
           })
         }}
-      </div>
-      <div>
-        End Date :
+        -
         {{
           info.endDate.toLocaleString('default', {
             month: 'long',
