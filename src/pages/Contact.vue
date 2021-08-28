@@ -2,8 +2,9 @@
   <q-page>
     <page-title title="Contact Me" />
     <div class="shayne-content">
-      If you are interested in hiring me, or would like to chat here are some
-      ways you can do so:
+      <center>
+        If you would like to contact me here are some ways you can do so:
+      </center>
       <div style="text-align: center; margin-top: 24px">
         <a class="shayne-icon" :href="'mailto:' + email.url">
           <q-icon size="lg" name="fas fa-envelope"
