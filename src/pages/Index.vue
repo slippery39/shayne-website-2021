@@ -3,8 +3,8 @@
     <page-title title="Hey there, I am Shayne Quinton!" />
     <div>
       <p>
-        I'm a software developer who is passionate about learning and trying out
-        new things.
+        I'm a Canadian software developer who is passionate about learning and
+        trying out new things.
       </p>
       <p>
         This website is my personal diary of side projects like game development
