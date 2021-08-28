@@ -32,7 +32,7 @@ export default defineComponent({
     return {
       linkedIn: { url: 'https://www.linkedin.com/in/shayne-quinton-809a5269/' },
       github: { url: 'https://github.com/slippery39' },
-      email: { url: 'shayne_quinton@hotmail.com' },
+      email: { url: 'shaynequinton@outlook.com' },
     };
   },
 });
