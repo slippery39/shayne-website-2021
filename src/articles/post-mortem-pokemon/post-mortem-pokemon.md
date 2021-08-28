@@ -1,6 +1,5 @@
 Since the time I started learning how to program I had always wanted to make a Pokemon game. I remember playing countless hours of the original pokemon and its sequels
-throughout my childhood. The game has a lot of complex systems that need to interact with each other which makes for an interesting project. Given that I am a bit older now and gained a bit more programming skills,
-I thought it would be a good time to attempt to create a clone of the Pokemon game's battle system.
+throughout my childhood. The game has a lot of complex systems that need to interact with each other which makes for an interesting project. Given that I am a bit older now and gained a bit more programming skills, I thought it would be a good time to attempt to create a clone of the Pokemon game's battle system.
 
 **Goal of the Project**
 
@@ -12,12 +11,11 @@ The goals of this project were as follows.
 
 - Try out Organic Programming
 
-- Figure out an architecture that would work for creating a Pokemon
-  battle game
+- Figure out an architecture that would work for creating a Pokemon battle game
 
 - Create an online server for players to play over the internet
 
-This article will be easier to read if you already have some knowledge
+This article will be easier to understand if you already have some knowledge
 of how Pokemon works. Since its a complex game I may not go over certain parts of it in this article.
 
 **Project Management**
@@ -108,7 +106,7 @@ be more difficult to enforce and manage. I think a healthy mixture of
 planned and organic development will likely be the best way going
 forward. You could definitely shortcut some things by starting with
 architectures you know will have value, but keeping other parts of your
-codebase open for evolving.
+codebase open for evolution.
 
 **Tech Stack**
 
@@ -940,7 +938,7 @@ constantly update it. This led me to two A.I. algorithms
 They are both similar and act based on a (State,Action) =>
 ResultingState function. So in order to do this, we had to be able to
 simulate our game in the background. Thankfully since I had already had
-my game decoupled from everything else this was really easy to implement
+my game mostly decoupled from everything else this was really easy to implement
 and play around with.
 
 The Monte Carlo Simulation method simulates the game for each possible
@@ -970,13 +968,13 @@ There were some issues with implementing these in our game though.
 
 - There is a huge random element to the game, which means that we
   cannot assume that performing the same action on the same state will
-  produce the same result. This means we cannot easily cache results
+  produce the same result. This means we cannot easily cache previously computed results
   for a performance boost.
 
 - Performance of the game loop matters a lot with this type of A.I.
   And as such we needed to spend time optimizing the game loop.
 
-Overall I ended up using a poorly implemented MiniMax method, but It
+Overall I ended up using a poorly implemented MiniMax method, but it
 actually worked very well. I was able to get something up and running in
 less than 2 days. Originally I wanted to simulate many levels deep but
 ran into both performance and inexperience issues. Because I didn't want
@@ -987,7 +985,7 @@ After I got the AI running, I had an idea. What if I build a simulation
 mode where I was able mass battle 2 AI's together and be able to see the
 results?
 
-This is what drove the AI vs AI Simulation mode.
+This is what drove the devlopment of the AI vs AI Simulation mode.
 
 Specifically in the Team Battles simulation mode, I simulate a bunch of
 battles with random teams for each AI. The pokemon on the winning team
@@ -998,7 +996,7 @@ I had a lot of fun with this, but to my surprise it came with a few
 positive things I didn't think of at first.
 
 - Simulating a bunch of games is a great way to test your code for
-  runtime errors..
+  runtime errors.
 
 - You could check to see which characters (in our case Pokemon) are
   over-performing / under-performing and potentially balance the game
@@ -1013,18 +1011,17 @@ debug purposes.
 
 My favourite bug that I found this way was a never-ending game between 2
 Clefables that couldn't kill each other. This only would happen about
-once in 2000 game simulations. Sometimes the simulation would just stop,
+one in every 2000 game simulations. Sometimes the simulation would just stop,
 but not throw any runtime error which confused me. At first I thought
 maybe it was some sort of browser problem that might be stopping my
 script from running for too long, but it kept happening randomly,
-sometimes early on and sometimes later on. Once I checked what was going
+sometimes early on in the simulation and sometimes later on. Once I checked what was going
 on in the game logs when the simulations stalled, it showed me that 2
 Clefables had been battling each other for thousands of turns. This
 should have never happened as the official Pokemon game has a built in
 feature to stop infinite games (the struggle move) but mine was bugged
 due to Clefable's ability preventing the recoil damage that should have
-been dealt. This was something that would have been next to impossible
-to catch without a mass amount of people testing the game.
+been dealt. This was something that would have been extremly hard to catch otherwise without a large amount of people testing the game.
 
 **Overall Lessons Learned**
 
@@ -1043,3 +1040,5 @@ to catch without a mass amount of people testing the game.
 - React Hooks could be fine to use for user interfaces in games, but we might want to use an actual game engine if we plan on making a full game.
 
 -I wish I had kept track of my total hours worked
+
+-While I had fun with the project and learned a lot, 8 months felt a bit too long to spend on one project. My next project I want to be a bit shorter
