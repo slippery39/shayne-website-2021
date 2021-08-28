@@ -1,9 +1,6 @@
 <template>
   <q-page>
     <page-title title="Projects" />
-    <div style="padding-bottom: 24px">
-      These are my own personal projects I have worked on in my spare time.
-    </div>
     <div>
       <project-info-card
         style="margin: 0 auto; margin-bottom: 24px"
@@ -29,7 +26,7 @@ const testProjects: ProjectInfo[] = [
   {
     title: 'Pokemon Battle Simulator',
     description:
-      'A pokemon battle game where you can play against a computer opponent or play online vs another player. Front End built with React and Typescript, Server built with NodeJS and hosted on Heroku',
+      'A pokemon battle game where you can play against a computer opponent or play online vs another player. Front End built with React and Typescript, Server built with NodeJS using socket.io and hosted on Heroku',
     url: 'http://pokemon-sim.shayne-quinton.com',
     image: 'project-screenshots/pokemon.jpg',
     startDate: new Date(2020, 8, 1),
