@@ -1,7 +1,6 @@
 <template>
-  <div>
+  <div style="margin-bottom: 100px">
     <h3>{{ articleInfo.title }}</h3>
-
     <router-view />
   </div>
 </template>
