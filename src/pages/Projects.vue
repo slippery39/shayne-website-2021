@@ -34,6 +34,7 @@ const testProjects: ProjectInfo[] = [
     articles: getArticles().filter((info: ArticleInfo) =>
       info.tags.includes('pokemon battle simulator')
     ),
+    techUsed: ['React', 'TypeScript', 'NodeJS', 'socket.io', 'Heroku'],
   },
   {
     title: 'Vector Drawing App',
@@ -46,6 +47,7 @@ const testProjects: ProjectInfo[] = [
     articles: getArticles().filter((info: ArticleInfo) =>
       info.tags.includes('vector drawing app')
     ),
+    techUsed: ['VueJS', 'Quasar'],
   },
 ];
 

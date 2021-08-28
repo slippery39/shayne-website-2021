@@ -30,7 +30,17 @@
       <div>{{ info.description }}</div>
     </q-card-section>
     <q-card-section>
-      <div v-if="info.articles !== undefined">
+      <div>
+        Technologies Used :
+        <ul>
+          <li :key="tech" v-for="tech in info.techUsed">{{ tech }}</li>
+        </ul>
+      </div>
+    </q-card-section>
+    <q-card-section>
+      <div v-if="info.articles !== undefined && info.articles.length > 0">
+        <div>Articles Related to this Project :</div>
+        <br />
         <router-link
           v-for="article in info.articles"
           :key="article.id"

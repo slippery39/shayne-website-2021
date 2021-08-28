@@ -9,4 +9,5 @@ export interface ProjectInfo {
   startDate: Date,
   endDate: Date,
   articles?: ArticleInfo[],
+  techUsed: string[]
 }
