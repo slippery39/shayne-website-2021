@@ -1,23 +1,15 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <page-title title="Welcome to shayne-quinton.com!" />
+    <page-title title="Hey there, I am Shayne Quinton!" />
     <div>
       <p>
-        I am a Canadian software developer who is very passionate about learning
-        and improving every single day.
+        I'm a software developer who is passionate about learning and trying out
+        new things.
       </p>
       <p>
-        After work and on weekends I am an aspiring game developer, basketball
-        fan, and cat owner.
-      </p>
-      <p>
-        I travelled to Mexico right before the COVID-19 pandemic happened and
-        ended up staying there for almost a year. Because of the pandemic I
-        ended up having a lot more time than usual and I decided that I would
-        start to work on more personal projects regarding software, web and game
-        development. This website was created mainly so I can keep a diary of
-        these projects and maybe one day look back and see how much progress I
-        have made as a developer.
+        This website is my personal diary of side projects like game development
+        projects that I do for fun, or projects to learn technologies I might
+        not have had a chance to use in my day job.
       </p>
     </div>
   </q-page>
