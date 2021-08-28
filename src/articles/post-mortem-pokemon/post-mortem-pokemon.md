@@ -1040,5 +1040,3 @@ been dealt. This was something that would have been extremly hard to catch other
 - React Hooks could be fine to use for user interfaces in games, but we might want to use an actual game engine if we plan on making a full game.
 
 -I wish I had kept track of my total hours worked
-
--While I had fun with the project and learned a lot, 8 months felt a bit too long to spend on one project. My next project I want to be a bit shorter
