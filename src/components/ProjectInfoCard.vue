@@ -6,10 +6,12 @@
     </q-card-section>
     <q-card-section style="text-align: center">
       <div v-if="info.github !== undefined">Github: {{ info.github }}</div>
-      <div><a :href="info.url">Click here to view online</a></div>
+      <div v-if="info.url !== undefined">
+        <a :href="info.url">Click here to view online</a>
+      </div>
     </q-card-section>
     <q-card-section>
-      <div>
+      <div v-if="info.endDate !== undefined">
         Development Period:
         {{
           info.startDate.toLocaleString('default', {
@@ -19,12 +21,13 @@
         }}
         -
         {{
-          info.endDate.toLocaleString('default', {
+          info.endDate?.toLocaleString('default', {
             month: 'long',
             year: 'numeric',
           })
         }}
       </div>
+      <div v-else>Work In Progress</div>
     </q-card-section>
     <q-card-section>
       <div>{{ info.description }}</div>

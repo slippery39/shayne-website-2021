@@ -7,6 +7,13 @@ const articles: ArticleInfo[] = [
         title: 'Post Mortem - Pokemon Battle Simulator',
         description: 'A reflection on lessons learned from developing the Pokemon Battle Simulator',
         tags: ['pokemon battle simulator', 'post mortem']
+    },
+    {
+        id: 'lumines-clone',
+        date: new Date('September 03 2021'),
+        title: 'The development of a Lumines Clone – Month 1',
+        description: 'A development diary of building a clone of the game Lumines',
+        tags: ['lumines clone', 'dev-diary']
     }
 ]
 

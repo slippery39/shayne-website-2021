@@ -24,6 +24,19 @@ import ArticleInfo from 'src/data/ArticleInfo';
 //placeholder image can be found with https://via.placeholder.com/150;
 const testProjects: ProjectInfo[] = [
   {
+    title: 'Lumines Clone',
+    description:
+      'A clone of the game Lumines built using the Unity game engine.',
+    image: 'project-screenshots/lumines-clone.jpg',
+    url: undefined,
+    startDate: new Date(2021, 8, 1),
+    endDate: undefined,
+    articles: getArticles().filter((info: ArticleInfo) =>
+      info.tags.includes('lumines clone')
+    ),
+    techUsed: ['Unity', 'C#'],
+  },
+  {
     title: 'Pokemon Battle Simulator',
     description:
       'A pokemon battle game where you can play against a computer opponent or play online vs another player. Front End built with React and Typescript, Server built with NodeJS using socket.io and hosted on Heroku',
