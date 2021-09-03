@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-bottom: 100px">
+  <div style="padding-bottom: 100px">
     <h3>{{ articleInfo.title }}</h3>
     <h4>{{ formatDate(articleInfo.date) }}</h4>
     <router-view />
