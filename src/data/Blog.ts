@@ -25,7 +25,7 @@ const DefaultBlog: IBlog = {
         console.log(name);
 
         console.log('testing our axios call');
-        const post = await axios.get<WordPressPost[]>('http://127.0.0.1/wp/wp-json/wp/v2/posts?slug=test-blog-post');
+        const post = await axios.get<WordPressPost[]>(`http://127.0.0.1/wp/wp-json/wp/v2/posts?slug=${name}`);
 
         console.log('done our axios call');
         console.log(post);
