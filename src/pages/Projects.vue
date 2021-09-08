@@ -21,6 +21,16 @@ import PageTitle from 'src/components/PageTitle.vue';
 import { getArticles } from 'src/data/Articles';
 import ArticleInfo from 'src/data/ArticleInfo';
 
+import DefaultBlog from 'src/data/Blog';
+
+console.log('Testing our projects file');
+
+void (async () => {
+  console.log('testing async');
+  await DefaultBlog.GetPostByName('bananas');
+  console.log('done async');
+})();
+
 //placeholder image can be found with https://via.placeholder.com/150;
 const testProjects: ProjectInfo[] = [
   {
