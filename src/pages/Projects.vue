@@ -18,8 +18,6 @@ import { defineComponent } from 'vue';
 import { ProjectInfo } from 'src/data/ProjectInfo';
 import ProjectInfoCard from 'src/components/ProjectInfoCard.vue';
 import PageTitle from 'src/components/PageTitle.vue';
-import { getArticles } from 'src/data/Articles';
-import ArticleInfo from 'src/data/ArticleInfo';
 
 import DefaultBlog from 'src/data/Blog';
 
@@ -41,9 +39,7 @@ const testProjects: ProjectInfo[] = [
     url: undefined,
     startDate: new Date(2021, 8, 1),
     endDate: undefined,
-    articles: getArticles().filter((info: ArticleInfo) =>
-      info.tags.includes('lumines clone')
-    ),
+    articles: ['development-of-a-lumines-clone-month-1'],
     techUsed: ['Unity', 'C#'],
   },
   {
@@ -54,9 +50,7 @@ const testProjects: ProjectInfo[] = [
     image: 'project-screenshots/pokemon.jpg',
     startDate: new Date(2020, 8, 1),
     endDate: new Date(2021, 5, 1),
-    articles: getArticles().filter((info: ArticleInfo) =>
-      info.tags.includes('pokemon battle simulator')
-    ),
+    articles: ['pokemon-battle-simulator-post-mortem'],
     techUsed: ['React', 'TypeScript', 'NodeJS', 'socket.io', 'Heroku'],
   },
   {
@@ -67,9 +61,6 @@ const testProjects: ProjectInfo[] = [
     image: 'vector-drawing-app/screenshot.jpg',
     startDate: new Date(2020, 3, 1),
     endDate: new Date(2020, 4, 1),
-    articles: getArticles().filter((info: ArticleInfo) =>
-      info.tags.includes('vector drawing app')
-    ),
     techUsed: ['VueJS', 'Quasar'],
   },
 ];

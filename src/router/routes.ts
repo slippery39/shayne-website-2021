@@ -1,23 +1,4 @@
 import { RouteRecordRaw } from 'vue-router';
-import { getArticles } from 'src/data/Articles';
-
-import ShayneArticle from 'src/components/ShayneArticle.vue';
-
-
-
-const articleRoutes: RouteRecordRaw[] = getArticles().map(a => {
-  console.log(a);
-  return {
-    path: '/articles/',
-    component: () => import('layouts/MainLayout.vue'),
-    // component: () => import(`src/articles/${a.id}/${a.id}.md`),
-    children: [{
-      path: '', component: ShayneArticle, props: { articleInfo: a },
-      children: [{ path: `${a.id}`, component: () => import(`src/articles/${a.id}/${a.id}.md`) }]
-    }],
-  }
-});
-
 
 const routes: RouteRecordRaw[] = [
   {
@@ -39,9 +20,6 @@ const routes: RouteRecordRaw[] = [
     path: '/blog', component: () => import('layouts/MainLayout.vue'),
     children: [{ path: ':id', component: () => import('components/BlogPost.vue') }]
   },
-  ...articleRoutes,
-  // Always leave this as last one,
-  // but you can also remove it
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/Error404.vue'),

@@ -46,9 +46,9 @@
         <br />
         <router-link
           v-for="article in info.articles"
-          :key="article.id"
-          :to="`/articles/${article.id}`"
-          >{{ article.title }}</router-link
+          :key="article"
+          :to="`/blog/${article}`"
+          >{{ article }}</router-link
         >
       </div>
     </q-card-section>

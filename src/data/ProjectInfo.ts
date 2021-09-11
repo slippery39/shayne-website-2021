@@ -1,5 +1,3 @@
-import ArticleInfo from './ArticleInfo';
-
 export interface ProjectInfo {
   title: string;
   image?: string;
@@ -8,6 +6,6 @@ export interface ProjectInfo {
   github?: string;
   startDate: Date,
   endDate?: Date,
-  articles?: ArticleInfo[],
+  articles?: string[],
   techUsed: string[]
 }

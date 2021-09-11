@@ -1,15 +1,16 @@
 <template>
-  <div style="padding-bottom: 100px">
-    <h1 v-html="title"></h1>
-    <h4 v-if="date !== undefined">{{ formatDate(date) }}</h4>
-    <div class="post-content" v-html="content"></div>
-    <router-view />
-  </div>
+  <router-view :key="$route.fullPath">
+    <div style="padding-bottom: 100px">
+      <h1 v-html="title"></h1>
+      <h4 v-if="date !== undefined">{{ formatDate(date) }}</h4>
+      <div class="post-content" v-html="content"></div>
+    </div>
+  </router-view>
 </template>
 
 <script lang="ts">
-import DefaultBlog from 'src/data/Blog';
-import { defineComponent, PropType, onBeforeMount } from 'vue';
+import RemoteBlog from 'src/data/Blog';
+import { defineComponent } from 'vue';
 
 const longEnUSFormatter = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
@@ -38,26 +39,28 @@ export default defineComponent({
     this.content = '';
     this.date = undefined;
 
-    void DefaultBlog.GetPostByName(this.$route.params.id as string)
+    void RemoteBlog.GetPostByName(to.params.id as string)
       .then((post) => {
         console.log(post);
         this.title = post.title;
         this.content = post.content;
         this.date = new Date(post.date);
+        next();
       })
       .catch((err) => {
         console.log(err);
         this.content = '<b>Unable to locate blog post</b>';
       });
 
-    next();
     // react to route changes...
     // don't forget to call next()
   },
   beforeMount() {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    console.log(this.$route.params.id);
-    void DefaultBlog.GetPostByName(this.$route.params.id as string)
+
+    console.log(this.$route.params);
+
+    void RemoteBlog.GetPostByName(this.$route.params.id as string)
       .then((post) => {
         console.log(post);
         this.title = post.title;
@@ -69,7 +72,7 @@ export default defineComponent({
         this.content = '<b>Unable to locate blog post</b>';
       });
   },
-  setup: (props) => {
+  setup: () => {
     return { formatDate: (date: Date) => longEnUSFormatter.format(date) };
   },
 });
