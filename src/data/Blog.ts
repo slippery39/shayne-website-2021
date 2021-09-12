@@ -20,41 +20,34 @@ export interface WordPressPost {
 }
 
 const GetWordpressPostByName = async (name: string, url: string): Promise<IPost> => {
+    //Having issues with the browser and or the api cache not updating the post, so 
+    //I have added a cachebreaker variable temporarily to make sure it doesn't happen so much.
+    //while I figure out a fix
+    const apiUrl = `${url}posts?slug=${name}&cacheBreak=${Math.random()}`;
 
-    console.log('getting wordpress post');
-    const apiUrl = `${url}posts?slug=${name}`;
-    console.log(apiUrl);
     const post = await axios.get<WordPressPost[]>(apiUrl);
-
-    console.log(post);
-    console.log(post.data[0]);
 
     const newPost: IPost = {
         title: post.data[0].title.rendered,
         content: post.data[0].content.rendered,
         date: new Date(post.data[0].date)
     }
-    console.log('done getting wordpress post');
     return newPost;
 }
 
 const CreateBlog = (url: string): IBlog => {
-
     const blog: IBlog = {
-
         GetPostByName: async function (name: string): Promise<IPost> {
-            console.log('getting post');
             const post = await GetWordpressPostByName(name, url);
-            console.log('done getting post');
-
             return post;
         }
     }
     return blog;
 }
 
+//Use the local blog if you want to test a post locally for whatever reason.
 //const LocalBlog = CreateBlog('http://127.0.0.1/wp/wp-json/wp/v2/');
-const RemoteBlog = CreateBlog('http://blog.shayne-quinton.com/wp-json/wp/v2/');
+const RemoteBlog = CreateBlog('https://blog.shayne-quinton.com/wp-json/wp/v2/');
 
 
 
