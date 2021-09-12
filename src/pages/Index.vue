@@ -1,6 +1,6 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <page-title title="Hey there, I am Shayne Quinton!" />
+    <page-title title="Welcome!" />
     <div>
       <p>
         I'm a Canadian software developer who is passionate about learning and
