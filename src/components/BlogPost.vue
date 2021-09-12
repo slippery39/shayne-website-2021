@@ -1,8 +1,10 @@
 <template>
   <router-view :key="$route.fullPath">
-    <div style="padding-bottom: 100px">
-      <h1 v-html="title"></h1>
-      <h4 v-if="date !== undefined">{{ formatDate(date) }}</h4>
+    <div style="padding-bottom: 100px; margin-left: 10px; margin-right: 10px">
+      <h2 v-html="title"></h2>
+      <h4 style="text-align: center" v-if="date !== undefined">
+        {{ formatDate(date) }}
+      </h4>
       <div class="post-content" v-html="content"></div>
     </div>
   </router-view>
@@ -79,11 +81,22 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.post-content >>> pre {
+  max-width: 100%;
+  max-height: 350px;
+  overflow: auto;
+}
+
+.post-content >>> figcaption {
+  text-align: center;
+}
 /*
 hard coded width and height attributes screw with the proportions.
 */
 .post-content >>> img[class*='wp-image-'] {
-  width: 100%;
+  max-width: 100%;
   height: 100%;
+  margin: 0 auto;
+  display: block;
 }
 </style>
