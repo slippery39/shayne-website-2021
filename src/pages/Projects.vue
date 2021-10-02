@@ -20,7 +20,6 @@ import ProjectInfoCard from 'src/components/ProjectInfoCard.vue';
 import PageTitle from 'src/components/PageTitle.vue';
 
 import DefaultBlog from 'src/data/Blog';
-import RecentPosts from 'src/components/RecentPosts.vue';
 
 console.log('Testing our projects file');
 
