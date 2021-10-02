@@ -1,6 +1,6 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <page-title title="Welcome!" />
+    <page-title title="Who am I?" />
     <div>
       <p>
         I'm a Canadian software developer who is passionate about learning and
