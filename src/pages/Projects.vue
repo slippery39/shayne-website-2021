@@ -20,12 +20,15 @@ import ProjectInfoCard from 'src/components/ProjectInfoCard.vue';
 import PageTitle from 'src/components/PageTitle.vue';
 
 import DefaultBlog from 'src/data/Blog';
+import RecentPosts from 'src/components/RecentPosts.vue';
 
 console.log('Testing our projects file');
 
 void (async () => {
-  console.log('testing async');
-  await DefaultBlog.GetPostByName('bananas');
+  console.log('testing async get recent posts');
+
+  const recentPosts = await DefaultBlog.GetRecentPosts();
+  console.log(recentPosts);
   console.log('done async');
 })();
 

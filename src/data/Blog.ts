@@ -5,34 +5,58 @@ import axios from 'axios';
 
 interface IBlog {
     GetPostByName: (name: string) => Promise<IPost>;
+    GetRecentPosts: () => Promise<IPost[]>;
 }
 
-interface IPost {
+export interface IPost {
     title: string,
     date: Date,
-    content: string
+    content: string,
+    shortContent: string,
+    slug: string
 }
 
 export interface WordPressPost {
     title: { rendered: string },
     content: { rendered: string },
+    excerpt: { rendered: string },
+    slug: string,
     date: string
+}
+
+const WordPressPostToOurPost = (original: WordPressPost) => {
+    const newPost: IPost = {
+        title: original.title.rendered,
+        content: original.content.rendered,
+        date: new Date(original.date),
+        shortContent: original.excerpt.rendered,
+        slug: original.slug
+    }
+    return newPost;
 }
 
 const GetWordpressPostByName = async (name: string, url: string): Promise<IPost> => {
     //Having issues with the browser and or the api cache not updating the post, so 
     //I have added a cachebreaker variable temporarily to make sure it doesn't happen so much.
     //while I figure out a fix
-    const apiUrl = `${url}posts?slug=${name}&cacheBreak=${Math.random()}`;
+    const apiUrl = `${url}posts?slug=${name}&cacheBreaker=${Math.random() * Date.now()}`;
 
     const post = await axios.get<WordPressPost[]>(apiUrl);
 
-    const newPost: IPost = {
-        title: post.data[0].title.rendered,
-        content: post.data[0].content.rendered,
-        date: new Date(post.data[0].date)
-    }
-    return newPost;
+    return WordPressPostToOurPost(post.data[0]);
+}
+
+const GetRecentWordpressBlogPosts = async (url: string): Promise<IPost[]> => {
+
+    const apiUrl = `${url}posts?cacheBreaker=${Math.random() * Date.now()}`;
+
+    const posts = await axios.get<WordPressPost[]>(apiUrl);
+
+    const newPosts: IPost[] = posts.data.map(wpPost => {
+        return WordPressPostToOurPost(wpPost);
+    });
+
+    return newPosts;
 }
 
 const CreateBlog = (url: string): IBlog => {
@@ -40,6 +64,10 @@ const CreateBlog = (url: string): IBlog => {
         GetPostByName: async function (name: string): Promise<IPost> {
             const post = await GetWordpressPostByName(name, url);
             return post;
+        },
+        GetRecentPosts: async function (): Promise<IPost[]> {
+            const posts = await GetRecentWordpressBlogPosts(url)
+            return posts;
         }
     }
     return blog;

@@ -12,16 +12,18 @@
         not have had a chance to use in my day job.
       </p>
     </div>
+    <recent-posts />
   </q-page>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import PageTitle from 'components/PageTitle.vue';
+import RecentPosts from 'src/components/RecentPosts.vue';
 
 export default defineComponent({
   name: 'PageIndex',
-  components: { PageTitle },
+  components: { PageTitle, RecentPosts },
   /*
   setup() {
     const todos = ref<Todo[]>([
