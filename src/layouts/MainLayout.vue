@@ -26,6 +26,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import './MainLayout.scss';
+import 'pattern.css';
 
 export default defineComponent({
   name: 'MainLayout',
