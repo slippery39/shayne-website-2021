@@ -13,12 +13,7 @@
 <script lang="ts">
 import RemoteBlog from 'src/data/Blog';
 import { defineComponent } from 'vue';
-
-const longEnUSFormatter = new Intl.DateTimeFormat('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+import dateFormatter from 'src/data/DateFormatter';
 
 interface BlogPostData {
   title: string;
@@ -75,7 +70,7 @@ export default defineComponent({
       });
   },
   setup: () => {
-    return { formatDate: (date: Date) => longEnUSFormatter.format(date) };
+    return dateFormatter;
   },
 });
 </script>
