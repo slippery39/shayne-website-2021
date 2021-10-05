@@ -44,12 +44,9 @@
       <div v-if="info.articles !== undefined && info.articles.length > 0">
         <div>Articles Related to this Project :</div>
         <br />
-        <router-link
-          v-for="article in info.articles"
-          :key="article"
-          :to="`/blog/${article}`"
-          >{{ article }}</router-link
-        >
+        <div v-for="article in info.articles" :key="{ article }">
+          <router-link :to="`/blog/${article}`">{{ article }}</router-link>
+        </div>
       </div>
     </q-card-section>
   </q-card>

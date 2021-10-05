@@ -6,6 +6,7 @@ export interface ProjectInfo {
   github?: string;
   startDate: Date,
   endDate?: Date,
+  articleQuery?: string;
   articles?: string[],
   techUsed: string[]
 }

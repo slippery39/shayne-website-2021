@@ -19,18 +19,6 @@ import { ProjectInfo } from 'src/data/ProjectInfo';
 import ProjectInfoCard from 'src/components/ProjectInfoCard.vue';
 import PageTitle from 'src/components/PageTitle.vue';
 
-import DefaultBlog from 'src/data/Blog';
-
-console.log('Testing our projects file');
-
-void (async () => {
-  console.log('testing async get recent posts');
-
-  const recentPosts = await DefaultBlog.GetRecentPosts();
-  console.log(recentPosts);
-  console.log('done async');
-})();
-
 //placeholder image can be found with https://via.placeholder.com/150;
 const testProjects: ProjectInfo[] = [
   {
@@ -41,7 +29,10 @@ const testProjects: ProjectInfo[] = [
     url: undefined,
     startDate: new Date(2021, 8, 1),
     endDate: undefined,
-    articles: ['development-of-a-lumines-clone-month-1'],
+    articles: [
+      'development-of-a-lumines-clone-month-1',
+      'development-of-a-lumines-clone-month-2',
+    ],
     techUsed: ['Unity', 'C#'],
   },
   {
