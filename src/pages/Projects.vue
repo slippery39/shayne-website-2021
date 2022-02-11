@@ -18,6 +18,7 @@ import { defineComponent } from 'vue';
 import { ProjectInfo } from 'src/data/ProjectInfo';
 import ProjectInfoCard from 'src/components/ProjectInfoCard.vue';
 import PageTitle from 'src/components/PageTitle.vue';
+import Blog from 'src/data/Blog';
 
 //placeholder image can be found with https://via.placeholder.com/150;
 const testProjects: ProjectInfo[] = [
@@ -29,10 +30,7 @@ const testProjects: ProjectInfo[] = [
     url: undefined,
     startDate: new Date(2021, 8, 1),
     endDate: undefined,
-    articles: [
-      'development-of-a-lumines-clone-month-1',
-      'development-of-a-lumines-clone-month-2',
-    ],
+    articleTag: 'lumines-clone',
     techUsed: ['Unity', 'C#'],
   },
   {
@@ -43,7 +41,7 @@ const testProjects: ProjectInfo[] = [
     image: 'project-screenshots/pokemon.jpg',
     startDate: new Date(2020, 8, 1),
     endDate: new Date(2021, 5, 1),
-    articles: ['pokemon-battle-simulator-post-mortem'],
+    articleTag: 'pokemon',
     techUsed: ['React', 'TypeScript', 'NodeJS', 'socket.io', 'Heroku'],
   },
   {
@@ -61,6 +59,17 @@ const testProjects: ProjectInfo[] = [
 export default defineComponent({
   name: 'Projects',
   components: { ProjectInfoCard, PageTitle },
+  async beforeMount() {
+    console.log('Our projects page is mounting!');
+
+    await Blog.GetRecentPosts();
+
+    //await Blog.GetPostsByTagType('lumines');
+    //await Blog.GetPostsByTagType('pokemon');
+
+    //here is where we need to grab all of our articles.
+    //Might need some refactoring here. We will need to grab a Link and an Article Name, and pass this 'ArticleInfo" down to the ProjectCard.
+  },
   props: {
     projects: {
       default: testProjects,

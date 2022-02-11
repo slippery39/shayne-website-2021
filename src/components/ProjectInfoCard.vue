@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 <template>
   <q-card style="max-width: 500px">
     <q-card-section style="text-align: center">
@@ -41,11 +42,14 @@
       </div>
     </q-card-section>
     <q-card-section>
-      <div v-if="info.articles !== undefined && info.articles.length > 0">
-        <div>Articles Related to this Project :</div>
+      <div v-if="articles !== undefined && articles.length > 0">
+        <div>Posts Related to this Project :</div>
         <br />
-        <div v-for="article in info.articles" :key="{ article }">
-          <router-link :to="`/blog/${article}`">{{ article }}</router-link>
+        <div v-for="article in articles" :key="{ article }">
+          <router-link
+            v-html="article.title"
+            :to="`/blog/${article.slug}`"
+          ></router-link>
         </div>
       </div>
     </q-card-section>
@@ -53,23 +57,45 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType, ref } from 'vue';
 import { ProjectInfo } from 'src/data/ProjectInfo';
+import Blog from 'src/data/Blog';
+import { IPost } from 'src/data/Blog';
+
+//TODO - grab our articles based on the tag.
 
 export default defineComponent({
   name: 'ProjectInfoCard',
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   props: {
     info: {
       type: Object as PropType<ProjectInfo>,
       required: true,
     },
   },
-  setup: (props) => {
+  setup(props) {
+    const articles = ref<IPost[]>([]);
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     console.log(props.info.startDate);
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     console.log(props.info.endDate);
+
+    return {
+      articles,
+    };
+  },
+  async beforeMount() {
+    const fetchArticleSlugs = async () => {
+      if (this.info.articleTag == undefined) {
+        return;
+      }
+      const postsForProject = await Blog.GetPostsByTagType(
+        this.info.articleTag
+      );
+      // eslint-disable-next-line vue/no-mutating-props
+      this.articles = postsForProject;
+    };
+    console.log('fetching article slugs');
+    await fetchArticleSlugs();
   },
 });
 </script>
