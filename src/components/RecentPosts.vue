@@ -1,10 +1,12 @@
 <template>
-  <div style="width: 100%; text-align: center">
+  <div style="min-width: 400px; max-width: 100%">
     <div>
-      <h4>Recent Posts</h4>
+      <h4 style="text-align: center">Recent Posts</h4>
     </div>
     <div v-for="post in posts" :key="post.title">
-      <span>{{ formatDate(post.date) }} - </span>
+      <span style="width: 130px; text-align: left"
+        >{{ formatDate(post.date) }} -
+      </span>
       <router-link :to="`/blog/${post.slug}`"
         ><span v-html="post.title"
       /></router-link>
